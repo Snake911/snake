@@ -1,27 +1,57 @@
-const item = 10;
+const ITEM = 10;
+const BORDER = 0;
+const SPEED = 1;
+const FPS = 1000/60;
+const DOWN_KEY = 40;
+const RIGHT_KEY = 39;
+const UP_KEY = 38;
+const LEFT_KEY = 37;
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
-let x = 0;
-let y = 0;
+const CH = canvas.height;
+const CW = canvas.width;
+let x = 1;
+let y = 1;
+let upPressed = false;
+let downPressed = false;
+let rightPressed = false;
+let leftPressed = false;
 
-console.log(canvas.width);
+function include(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
-const right = () => {
-    x += 10;
-}
+include("move.js");
 
-const left = () => {
-    x -= 10;
-}
 
 const draw = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, CW, CH);
+    ctx.strokeRect(0, 0, CW, CH);
     ctx.fillStyle = "green";
-    ctx.fillRect(x, y, item, item);
-    if(x+item < canvas.width){
+    ctx.fillRect(x, y, ITEM, ITEM);
+    ctx.strokeRect(x, y, ITEM, ITEM);
+
+    if(rightPressed){
         right();
-    }else{}
-    console.log(x);
+    }
+    else if(leftPressed){
+    	left();
+    }
+    else if(upPressed){
+    	up();
+    }
+    else if(downPressed){
+    	down();
+    }
+
+    if(x == BORDER || y == BORDER || x+ITEM == CW || y+ITEM == CH){
+    	alert("GAME OVER");
+    	document.location.reload();
+    } 
+     
 }
 
-requestAnimationFrame(draw);
+
+setInterval(draw, FPS);
