@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-family: 'Press Start 2P', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    height: 100px;
+}
+
+footer {
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, .15);
+}
+
+main {
+    min-height: calc(100vh - 150px);
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.controls > div {
+    text-align: center;
+    font-size: 20px;
+}
+
+.field h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 1px solid #999;
+}
+
+.score_table h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.score_table_content {
+    height: 500px;
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+    align-content: start;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.row_win {
+    color: green;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    z-index: -1;
+}
+
+.controls_space img {
+    display: block;
+    width: 170px;
+    height: 100px;
+    object-fit: contain;
+    margin: auto;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

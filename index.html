@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <title>Snake</title>
+</head>
+<body>
+    <header>
+        <h1>Snake</h1>
+    </header>
+    <main>
+        <div class="controls">
+            <div class="controls_arrows">
+                <p>Move</p>
+                <img src="images/arrows_controls.png" alt="controls arrows" width="100px">
+            </div>
+            <div class="controls_space">
+                <p>Play/Payse</p>
+                <img src="images/space_controls.png" alt="controls space" width="170px">
+            </div>
+        </div>
+        <div class="field">
+            <h2 class="score">Score: <span id="scoreCount">0</span></h2>       
+            <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
+        <div class="score_table">
+            <h3>Last 10 scores</h3>
+            <div class="score_table_content" id="scoreTable"></div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/Snake911" target="_blank">&copy; Snake911</a>
+        <div>2022</div>
+        <a class="rss" href="https://rs.school/js-stage0/" target="_blank">
+            <img src="https://rs.school/images/rs_school_js.svg" alt="Rolling scopes scholl" height="40px">
+        </a>
+    </footer>
+    <div id="overlay" class="overlay">
+        <h2></h2>
+    </div>
+</body>
+</html>
